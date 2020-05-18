@@ -1,0 +1,29 @@
+
+<div [ngStyle]="{'background-image': geturl(),'background-size':getsize(),'height': '30%','background-position':'center'}">
+     <div style="background-color:black;height:40px"></div>
+	<div class="quiz_wrapper">
+           
+           <div class="question" id="questionBox"> 
+           	<h1>CHOOSE YOUR TEST ---> </h1>
+           </div>
+           
+           <div class="options">
+           	  <ul id="ul">
+           	  	  <li id="op1" onclick="button(this)"><button routerLink="/easy" (click)=call()>Easy for beginners</button></li>
+           	  	  <li id="op2" onclick="button(this)">Medium </li>
+           	  	  <li id="op3" onclick="button(this)">Hard and Advanced</li>
+           	  	  <li id="op4" onclick="button(this)">Star Questions based on previous years</li>
+           	  </ul>
+           </div>
+           <div class="score">
+           	   <div class="score-card">
+           	   	Your  Score : <span id="scoreCard">0</span>
+           	   </div>
+           </div>
+
+	</div>
+<img src = "assets/index.jpeg" style="width:420px;height:360px;border-radius: 30%;position:absolute;left:85%;top:80%;transform:translate(-50%,-50%)"/>
+<button style="color:blue;background-color:white;font-family:tahoma;border-radius: 20%;position:absolute;left:85%;top:90%;transform:translate(-50%,-50%)" routerLink="/profile"><h1> Start Anonymous Test </h1></button>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<div style="background-color:black;height:42px"></div>

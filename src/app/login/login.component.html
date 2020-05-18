@@ -1,0 +1,39 @@
+<div [ngStyle]="{'background-image': geturl(),'background-size':getsize(),'height': '30%','background-position':'center'}">
+<div class="container">
+    <h1 *ngIf="!verify" style="color:blue"> Login</h1>
+   <div *ngIf="verify" class="text-info text-md-center"><h1 >Login Done Successfully</h1>
+     <img src="https://i.pinimg.com/564x/f4/24/a7/f424a79b5db74e7daccf18bce4d2f650.jpg" alt="">
+   </div>
+    <form #userForm="ngForm" *ngIf="!verify" (ngSubmit)="onSubmit()" novalidate >
+        <!-- {{userForm.invalid |json}}
+        {{userModel | json}} -->
+        <div class="form-group">
+            <label>USERNAME</label>
+            <input type="text"  required minlength=3 #name="ngModel" class="form-control" [class.is-invalid]="name.touched && name.invalid"  name="name" [(ngModel)]="userModel.username">
+            <div *ngIf="username.errors && (username.invalid || username.touched)">
+                <small class="text-danger" *ngIf="username.errors.required">username is must</small>
+                <small class="text-danger" *ngIf="username.errors.minlength">username number must be atleast 3digit long </small>
+                
+            </div>
+        </div>
+    <div class="form-group">
+        <label >PASSWORD</label>
+        <input type="password"  required #password="ngModel" class="form-control" [class.is-invalid]="password.touched && password.invalid"  name="password" [(ngModel)]="userModel.password">
+        <div *ngIf="password.errors && (password.invalid || password.touched)">
+            <small class="text-danger" *ngIf="password.errors.required">password is must</small>
+        </div>
+    </div>
+    <button  (click)="Submit()" routerLink="/login/user" [disabled]="userForm.invalid && verify" type="submit" class="btn btn-primary">
+        Login
+    </button><br>
+    <h2>ARE YOU A NEW USER ? </h2><button routerLink="/register">SIGN UP HERE</button>
+    <small class="text-danger" *ngIf="!correct && clicked">Incorrect details</small>
+    </form>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+<div style="background-color:black;height:80px"></div>
+
+
+
+
